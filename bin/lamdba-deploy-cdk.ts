@@ -6,7 +6,7 @@ import { LamdbaDeployCdkStack } from '../lib/lamdba-deploy-cdk-stack';
 const app = new cdk.App();
 new LamdbaDeployCdkStack(app, 'LamdbaDeployCdkStack', {
   env: {
-    account: '',
+    account: '223945745576',
     region: 'us-east-1'
   }
 });

@@ -8,10 +8,12 @@ export class LamdbaDeployCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'MyPipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('dev-future-tech/lambda-deploy-cdk', 'main'),
+        input: CodePipelineSource.connection('dev-future-tech/lambda-deploy-cdk', 'main',
+        { connectionArn: 'arn:aws:codestar-connections:us-east-1:223945745576:connection/2d354243-4def-479e-9ce4-fb6cb06d1331'}),
         commands: ['npm ci', 'npm run build', 'npx cdk synth']
       })
     });

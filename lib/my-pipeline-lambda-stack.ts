@@ -1,7 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { Function, InlineCode, Runtime, S3Code } from 'aws-cdk-lib/aws-lambda';
-import { MyPipelineAppStage } from './my-pipeline-app-stage';
+import { Function, Runtime, S3Code } from 'aws-cdk-lib/aws-lambda';
 import { aws_s3 as s3 } from 'aws-cdk-lib';
 
 export class MyLambdaStack extends cdk.Stack {
